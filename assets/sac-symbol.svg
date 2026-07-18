@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="60 60 390 315" role="img" aria-labelledby="title desc">
+  <title id="title">SAC Logistics</title>
+  <desc id="desc">Angular SAC Logistics symbol</desc>
+  <style>
+    :root { --sac-main: #ffffff; --sac-accent: #c9a55a; }
+    .mark { cursor: pointer; transform-box: fill-box; transform-origin: center; transition: transform .32s cubic-bezier(.2,.8,.2,1), filter .32s ease; }
+    .part { transform-box: fill-box; transform-origin: center; transition: transform .34s cubic-bezier(.2,.8,.2,1), fill .3s ease; }
+    .top { fill: var(--sac-main); }
+    .bottom { fill: var(--sac-accent); }
+    svg:hover .mark { transform: translateY(-3px) scale(1.025); filter: drop-shadow(0 12px 15px rgba(0,0,0,.22)); }
+    svg:hover .top { transform: translate(5px,-3px); }
+    svg:hover .bottom { transform: translate(-8px,8px); }
+    @media (prefers-reduced-motion: reduce) { .mark, .part { transition: none; } }
+  </style>
+  <g class="mark">
+    <polygon class="part top" fill="#ffffff" points="77,172 211,245 277,186 166,161 193,130 365,130 434,75 170,75"/>
+    <polygon class="part bottom" fill="#c9a55a" points="411,200 330,185 179,321 217,358"/>
+  </g>
+</svg>
