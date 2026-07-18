@@ -1,1 +1,109 @@
-const F=document.querySelector('iframe');async function CA(){const d=F.contentDocument;if(!d||d.getElementById('sacAbout'))return;let l=d.getElementById('contentCSS');if(!l){l=d.createElement('link');l.id='contentCSS';l.rel='stylesheet';l.href='content-v13.css?v=17';d.head.appendChild(l)}const ar=d.documentElement.lang==='ar',T=(a,e)=>ar?a:e;d.querySelector('.equipment')?.remove();d.querySelector('.services')?.remove();let image='';try{image=await fetch('equipment-showcase-v17.txt?v=17').then(r=>r.text())}catch(e){}let s=d.createElement('section');s.id='sacAbout';s.className='sac dark';s.innerHTML=`<div class="wrap media-copy"><div><span class="tag">${T('عن SAC Logistics','About SAC Logistics')}</span><h2>${T('نوفّر المعدة والشاحنة المناسبة، وندير التنفيذ حتى اكتمال الخدمة.','We source the right equipment or truck and manage execution through completion.')}</h2><p class="lead">${T('شركة سعودية تخدم مشاريع المقاولات والمصانع والبنية التحتية عبر شبكة من ملاك المعدات وشركات النقل ومقدمي الخدمات. نراجع الاحتياج، نختار الحل الأنسب، وننسق الوصول والتشغيل والتسليم من خلال جهة واحدة.','A Saudi logistics company serving contractors, factories and infrastructure projects through a network of equipment owners, transport companies and specialist providers. We assess the need, select the right solution and coordinate arrival, operation and delivery through one accountable partner.')}</p></div><div class="equipment-stage">${image?`<img class="approved-equipment" src="${image}" alt="SAC Logistics equipment fleet">`:''}<span class="equipment-label">${T('شبكة معدات جاهزة للمشروع','Project-ready equipment network')}</span></div></div>`;d.querySelector('.hero').after(s);const A=ar?[['تأجير المعدات الثقيلة','معدات للمشاريع حسب النوع والسعة والمدة والموقع.'],['الشاحنات والنقل البري','شاحنات وتريلات لنقل المواد والبضائع والحاويات.'],['لو بد وهاي بد','نقل الآليات والأحمال الكبيرة بين المواقع.'],['حلول المشاريع والمصانع','دعم تشغيلي مجدول أو عند الطلب.'],['الصيانة والطوارئ','تنسيق الصيانة المتنقلة والورش وقطع الغيار.'],['المتابعة والتسليم','متابعة الطلب حتى اكتمال التشغيل أو التسليم.']]:[['Heavy Equipment Rental','Project equipment matched to type, capacity, duration and site.'],['Trucks & Road Transport','Trucks and trailers for materials, cargo and containers.'],['Low Bed & High Bed','Heavy machinery and oversized-load transport.'],['Project & Factory Support','Scheduled or on-demand operational support.'],['Maintenance & Emergency','Mobile maintenance, workshop and parts coordination.'],['Follow-up & Delivery','Order monitoring through operation or final delivery.']];let v=d.createElement('section');v.id='sacServices';v.className='sac panel';v.innerHTML=`<div class="wrap"><span class="tag">${T('خدماتنا','Our Services')}</span><h2>${T('خدمات تشغيل ونقل مترابطة، دون تعدد الجهات.','Connected equipment and transport services without multiple vendors.')}</h2><div class="service-grid-clean">${A.map((x,i)=>`<article class="service-card-clean"><b>${String(i+1).padStart(2,'0')}</b><h3>${x[0]}</h3><p>${x[1]}</p></article>`).join('')}</div></div>`;s.after(v)}F.addEventListener('load',()=>{CA();setTimeout(CA,700)})
+const F = document.querySelector('iframe');
+
+async function CA() {
+  const d = F.contentDocument;
+  if (!d || d.getElementById('sacAbout')) return;
+
+  let l = d.getElementById('contentCSS');
+  if (!l) {
+    l = d.createElement('link');
+    l.id = 'contentCSS';
+    l.rel = 'stylesheet';
+    l.href = 'content-v13.css?v=18';
+    d.head.appendChild(l);
+  }
+
+  const ar = d.documentElement.lang === 'ar';
+  const T = (a, e) => ar ? a : e;
+  d.querySelector('.equipment')?.remove();
+  d.querySelector('.services')?.remove();
+
+  let image = '';
+  try {
+    image = await fetch('equipment-showcase-v17.txt?v=17').then(r => r.text());
+  } catch (e) {}
+
+  const about = d.createElement('section');
+  about.id = 'sacAbout';
+  about.className = 'sac dark';
+  about.innerHTML = `<div class="wrap media-copy"><div><span class="tag">${T('عن SAC Logistics', 'About SAC Logistics')}</span><h2>${T('نوفّر المعدة والشاحنة المناسبة، وندير التنفيذ حتى اكتمال الخدمة.', 'We source the right equipment or truck and manage execution through completion.')}</h2><p class="lead">${T('شركة سعودية تخدم مشاريع المقاولات والمصانع والبنية التحتية عبر شبكة من ملاك المعدات وشركات النقل ومقدمي الخدمات. نراجع الاحتياج، نختار الحل الأنسب، وننسق الوصول والتشغيل والتسليم من خلال جهة واحدة.', 'A Saudi logistics company serving contractors, factories and infrastructure projects through a network of equipment owners, transport companies and specialist providers. We assess the need, select the right solution and coordinate arrival, operation and delivery through one accountable partner.')}</p></div><div class="equipment-stage">${image ? `<img class="approved-equipment" src="${image}" alt="SAC Logistics equipment fleet">` : ''}<span class="equipment-label">${T('شبكة معدات جاهزة للمشروع', 'Project-ready equipment network')}</span></div></div>`;
+  d.querySelector('.hero').after(about);
+
+  const equipment = [
+    {
+      image: 'assets/equipment/mobile-crane.webp',
+      number: '01',
+      title: T('الكرينات المتنقلة', 'Mobile Cranes'),
+      description: T('كرينات تلسكوبية محمولة على شاحنات لأعمال الرفع والتركيب والمناولة في المشاريع والمصانع والساحات. ننسّق اختيار السعة وطول الذراع ونطاق الوصول وفق وزن الحمولة وموقع الرفع وظروف الموقع.', 'Truck-mounted telescopic cranes for lifting, installation and handling across projects, factories and yards. Capacity, boom length and working radius are coordinated around load weight, lift position and site conditions.'),
+      tags: T(['رفع وتركيب', 'سعات متعددة', 'تنسيق الموقع'], ['Lifting & erection', 'Multiple capacities', 'Site coordination'])
+    },
+    {
+      image: 'assets/equipment/power-generator.webp',
+      number: '02',
+      title: T('مولدات الطاقة', 'Power Generators'),
+      description: T('مولدات ديزل للطاقة المؤقتة والاحتياطية والتشغيل المستمر في المواقع والمصانع والمستودعات. يتم تحديد القدرة المطلوبة بناءً على الأحمال وساعات التشغيل وطريقة التوصيل ومتطلبات الموقع.', 'Diesel generator sets for temporary, standby and continuous power at sites, factories and warehouses. Required output is selected around connected loads, operating hours, connection method and site requirements.'),
+      tags: T(['طاقة مؤقتة', 'تشغيل احتياطي', 'خيارات ملحقات'], ['Temporary power', 'Standby duty', 'Accessory options'])
+    },
+    {
+      image: 'assets/equipment/warehouse-stacker.webp',
+      number: '03',
+      title: T('الستاكر ومعدات المستودعات', 'Stackers & Warehouse Equipment'),
+      description: T('ستاكر كهربائي ويدوي ومعدات مناولة داخلية لتكديس الطبالي وتحريك البضائع في الممرات ومناطق التخزين. يتم الاختيار حسب الحمولة وارتفاع الرفع وعرض الممر ودورة التشغيل.', 'Electric and manual stackers with indoor handling equipment for pallet stacking and goods movement through aisles and storage zones. Selection is based on load, lift height, aisle width and duty cycle.'),
+      tags: T(['ممرات ضيقة', 'مناولة طبالي', 'كهربائي ويدوي'], ['Narrow aisles', 'Pallet handling', 'Electric & manual'])
+    },
+    {
+      image: 'assets/equipment/welding-machine.webp',
+      number: '04',
+      title: T('ماكينات ومعدات اللحام', 'Welding Machines & Equipment'),
+      description: T('ماكينات لحام للمشاريع وورش الصيانة والأعمال الصناعية، مع خيارات تناسب عمليات اللحام المختلفة ومتطلبات القدرة والتنقل. يمكن تنسيق الكابلات والملحقات ومصدر الطاقة ضمن الطلب.', 'Welding machines for projects, maintenance workshops and industrial work, with options suited to different welding processes, power requirements and mobility needs. Cables, accessories and power source can be coordinated with the request.'),
+      tags: T(['أعمال صناعية', 'صيانة ميدانية', 'ملحقات متكاملة'], ['Industrial work', 'Field maintenance', 'Integrated accessories'])
+    },
+    {
+      image: 'assets/equipment/forklift.webp',
+      number: '05',
+      title: T('الرافعات الشوكية', 'Forklifts'),
+      description: T('رافعات شوكية ديزل وكهرباء وغاز لمناولة البضائع والطبالي داخل المستودعات والساحات والمصانع. نوفر خيارات مختلفة للحمولة وارتفاع الرفع ونوع الإطارات وبيئة التشغيل.', 'Diesel, electric and LPG forklifts for goods and pallet handling inside warehouses, yards and factories. Options cover different load capacities, lift heights, tyre types and operating environments.'),
+      tags: T(['ديزل وكهرباء وغاز', 'مستودعات وساحات', 'ملحقات متنوعة'], ['Diesel, electric & LPG', 'Warehouse & yard', 'Multiple attachments'])
+    },
+    {
+      image: 'assets/equipment/backhoe-loader.webp',
+      number: '06',
+      title: T('الباكهو لودر', 'Backhoe Loaders'),
+      description: T('معدات متعددة الاستخدام تجمع بين الحفر والتحميل والتسوية لخدمة أعمال البنية التحتية وتجهيز المواقع والمرافق. يتم التنسيق حسب طبيعة التربة وعمق الحفر وحجم الأعمال ومدة التشغيل.', 'Versatile machines combining excavation, loading and grading for infrastructure, site preparation and utility works. Deployment is coordinated around soil conditions, digging depth, work volume and operating period.'),
+      tags: T(['حفر وتحميل', 'تجهيز مواقع', 'أعمال مرافق'], ['Digging & loading', 'Site preparation', 'Utility works'])
+    }
+  ];
+
+  const eq = d.createElement('section');
+  eq.id = 'equipment';
+  eq.className = 'sac equipment-portfolio';
+  eq.innerHTML = `<div class="wrap"><div class="equipment-head"><div><span class="tag">${T('قسم المعدات', 'Equipment Portfolio')}</span><h2>${T('معدات متكاملة للمشاريع والمصانع والمستودعات.', 'A complete equipment range for projects, factories and warehouses.')}</h2></div><div><p class="lead">${T('نوفر حلول التوريد والتأجير والتشغيل حسب نوع المعدة والسعة ومدة الاستخدام وموقع المشروع. يساعدك فريقنا على تحديد الخيار المناسب، التحقق من التوفر، تنسيق النقل والوصول، ومتابعة الخدمة حتى الإغلاق.', 'We provide supply, rental and deployment solutions based on equipment type, capacity, required period and project location. Our team helps define the right option, confirm availability, coordinate transport and arrival, and follow the service through close-out.')}</p><div class="equipment-modes"><span>${T('توريد', 'Supply')}</span><span>${T('تأجير قصير وطويل الأجل', 'Short & long-term rental')}</span><span>${T('تشغيل حسب المشروع', 'Project deployment')}</span></div></div></div><div class="equipment-grid">${equipment.map(item => `<article class="equipment-card"><div class="equipment-photo"><img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async"><span class="equipment-number">${item.number}</span></div><div class="equipment-copy"><h3>${item.title}</h3><p>${item.description}</p><div class="equipment-tags">${item.tags.map(tag => `<span>${tag}</span>`).join('')}</div><a href="#contact" class="equipment-link">${T('اطلب هذه المعدة ←', 'Request this equipment →')}</a></div></article>`).join('')}</div><div class="equipment-note"><div><b>${T('هل تحتاج معدة غير مدرجة؟', 'Need equipment not listed here?')}</b><p>${T('أرسل لنا المواصفات أو صورة المعدة المطلوبة، وسنراجع التوفر من خلال شبكة الموردين وملاك المعدات.', 'Send the required specifications or a reference image, and we will check availability through our supplier and equipment-owner network.')}</p></div><a class="btn primary" href="#contact">${T('أرسل طلبك', 'Send your request')}</a></div></div>`;
+  about.after(eq);
+
+  const services = ar ? [
+    ['تأجير المعدات الثقيلة', 'معدات للمشاريع حسب النوع والسعة والمدة والموقع.'],
+    ['الشاحنات والنقل البري', 'شاحنات وتريلات لنقل المواد والبضائع والحاويات.'],
+    ['لو بد وهاي بد', 'نقل الآليات والأحمال الكبيرة بين المواقع.'],
+    ['حلول المشاريع والمصانع', 'دعم تشغيلي مجدول أو عند الطلب.'],
+    ['الصيانة والطوارئ', 'تنسيق الصيانة المتنقلة والورش وقطع الغيار.'],
+    ['المتابعة والتسليم', 'متابعة الطلب حتى اكتمال التشغيل أو التسليم.']
+  ] : [
+    ['Heavy Equipment Rental', 'Project equipment matched to type, capacity, duration and site.'],
+    ['Trucks & Road Transport', 'Trucks and trailers for materials, cargo and containers.'],
+    ['Low Bed & High Bed', 'Heavy machinery and oversized-load transport.'],
+    ['Project & Factory Support', 'Scheduled or on-demand operational support.'],
+    ['Maintenance & Emergency', 'Mobile maintenance, workshop and parts coordination.'],
+    ['Follow-up & Delivery', 'Order monitoring through operation or final delivery.']
+  ];
+
+  const serviceSection = d.createElement('section');
+  serviceSection.id = 'sacServices';
+  serviceSection.className = 'sac panel';
+  serviceSection.innerHTML = `<div class="wrap"><span class="tag">${T('خدماتنا', 'Our Services')}</span><h2>${T('خدمات تشغيل ونقل مترابطة، دون تعدد الجهات.', 'Connected equipment and transport services without multiple vendors.')}</h2><div class="service-grid-clean">${services.map((x, i) => `<article class="service-card-clean"><b>${String(i + 1).padStart(2, '0')}</b><h3>${x[0]}</h3><p>${x[1]}</p></article>`).join('')}</div></div>`;
+  eq.after(serviceSection);
+}
+
+F.addEventListener('load', () => {
+  CA();
+  setTimeout(CA, 700);
+});
