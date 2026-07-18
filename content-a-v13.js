@@ -38,11 +38,11 @@ async function CA() {
       tags: T(['رفع وتركيب', 'سعات متعددة', 'تنسيق الموقع'], ['Lifting & erection', 'Multiple capacities', 'Site coordination'])
     },
     {
-      image: 'assets/equipment/power-generator.webp',
+      image: 'assets/equipment/transport-trucks.webp',
       number: '02',
-      title: T('مولدات الطاقة', 'Power Generators'),
-      description: T('مولدات ديزل للطاقة المؤقتة والاحتياطية والتشغيل المستمر في المواقع والمصانع والمستودعات. يتم تحديد القدرة المطلوبة بناءً على الأحمال وساعات التشغيل وطريقة التوصيل ومتطلبات الموقع.', 'Diesel generator sets for temporary, standby and continuous power at sites, factories and warehouses. Required output is selected around connected loads, operating hours, connection method and site requirements.'),
-      tags: T(['طاقة مؤقتة', 'تشغيل احتياطي', 'خيارات ملحقات'], ['Temporary power', 'Standby duty', 'Accessory options'])
+      title: T('شاحنات النقل والتريلات', 'Transport Trucks & Trailers'),
+      description: T('شاحنات نقل وتريلات لنقل مواد البناء والبضائع والطبالي والشحنات بين المدن والمستودعات والمصانع ومواقع المشاريع. ننسّق نوع المركبة والحمولة وموعد التحميل ومسار النقل والتسليم.', 'Transport trucks and trailers for building materials, cargo, pallets and shipments between cities, warehouses, factories and project sites. Vehicle type, load, pickup time, route and delivery are coordinated around the requirement.'),
+      tags: T(['نقل بري', 'مواد وبضائع', 'بين المدن والمواقع'], ['Road transport', 'Materials & cargo', 'Cities & project sites'])
     },
     {
       image: 'assets/equipment/warehouse-stacker.webp',
@@ -52,11 +52,11 @@ async function CA() {
       tags: T(['ممرات ضيقة', 'مناولة طبالي', 'كهربائي ويدوي'], ['Narrow aisles', 'Pallet handling', 'Electric & manual'])
     },
     {
-      image: 'assets/equipment/welding-machine.webp',
+      image: 'assets/equipment/low-high-bed-trucks.webp',
       number: '04',
-      title: T('ماكينات ومعدات اللحام', 'Welding Machines & Equipment'),
-      description: T('ماكينات لحام للمشاريع وورش الصيانة والأعمال الصناعية، مع خيارات تناسب عمليات اللحام المختلفة ومتطلبات القدرة والتنقل. يمكن تنسيق الكابلات والملحقات ومصدر الطاقة ضمن الطلب.', 'Welding machines for projects, maintenance workshops and industrial work, with options suited to different welding processes, power requirements and mobility needs. Cables, accessories and power source can be coordinated with the request.'),
-      tags: T(['أعمال صناعية', 'صيانة ميدانية', 'ملحقات متكاملة'], ['Industrial work', 'Field maintenance', 'Integrated accessories'])
+      title: T('شاحنات لو بد وهاي بد', 'Low Bed & High Bed Trucks'),
+      description: T('تريلات لو بد وهاي بد لنقل الآليات والمعدات الثقيلة والأحمال الكبيرة بين المواقع. يتم تنسيق منصة التحميل والحمولة والأبعاد ومسار الرحلة ومتطلبات الدخول إلى الموقع قبل التنفيذ.', 'Low bed and high bed trailers for machinery, heavy equipment and oversized loads between sites. Loading platform, weight, dimensions, route and site-access requirements are coordinated before execution.'),
+      tags: T(['نقل آليات', 'أحمال ثقيلة', 'تنسيق التحميل والمسار'], ['Machinery transport', 'Heavy loads', 'Loading & route planning'])
     },
     {
       image: 'assets/equipment/forklift.webp',

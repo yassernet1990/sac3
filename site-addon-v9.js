@@ -90,8 +90,10 @@ function X(){
   }
   const select=d.getElementById('type');
   if(select&&select.dataset.optionsLang!==(ar?'ar':'en')){
-    const options=ar?['تأجير معدات ثقيلة','كرينات ومعدات رفع','شاحنات ونقل بري','نقل لو بد / هاي بد','مولدات ومعدات صناعية','معدات مستودعات ورافعات شوكية','صيانة وقطع غيار','طلب آخر']:['Heavy equipment rental','Cranes & lifting equipment','Trucks & road transport','Low bed / high bed transport','Generators & industrial equipment','Warehouse equipment & forklifts','Maintenance & spare parts','Other requirement'];
-    select.innerHTML=options.map((text,index)=>`<option data-en="${['Heavy equipment rental','Cranes & lifting equipment','Trucks & road transport','Low bed / high bed transport','Generators & industrial equipment','Warehouse equipment & forklifts','Maintenance & spare parts','Other requirement'][index]}" data-ar="${['تأجير معدات ثقيلة','كرينات ومعدات رفع','شاحنات ونقل بري','نقل لو بد / هاي بد','مولدات ومعدات صناعية','معدات مستودعات ورافعات شوكية','صيانة وقطع غيار','طلب آخر'][index]}">${text}</option>`).join('');
+    const optionsAr=['تأجير معدات ثقيلة','كرينات ومعدات رفع','شاحنات نقل وتريلات','نقل لو بد / هاي بد','معدات مستودعات ورافعات شوكية','باكهو ومعدات مواقع','صيانة وقطع غيار','طلب آخر'];
+    const optionsEn=['Heavy equipment rental','Cranes & lifting equipment','Transport trucks & trailers','Low bed / high bed transport','Warehouse equipment & forklifts','Backhoe & site equipment','Maintenance & spare parts','Other requirement'];
+    const options=ar?optionsAr:optionsEn;
+    select.innerHTML=options.map((text,index)=>`<option data-en="${optionsEn[index]}" data-ar="${optionsAr[index]}">${text}</option>`).join('');
     select.dataset.optionsLang=ar?'ar':'en';
   }
   const b=d.getElementById('lang');
