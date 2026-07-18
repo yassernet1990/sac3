@@ -51,6 +51,11 @@ function X(){
     l.id='logoUI';l.rel='stylesheet';l.href='logo-v19.css?v=19';
     d.head.appendChild(l);
   }
+  if(!d.getElementById('polishUI')){
+    const l=d.createElement('link');
+    l.id='polishUI';l.rel='stylesheet';l.href='polish-v20.css?v=20';
+    d.head.appendChild(l);
+  }
   const brand=d.querySelector('.brand');
   if(brand&&!brand.dataset.sacLogo){
     brand.dataset.sacLogo='1';brand.classList.add('sac-brand');
@@ -59,7 +64,18 @@ function X(){
   }
   const ar=d.documentElement.lang==='ar';
   const h=d.querySelector('.hero h1');
-  if(h)h.dataset.ar='معدات لوجستية<br>تحرّك<br>أعمالك.';
+  const heroP=d.querySelector('.hero-copy>p');
+  const eye=d.querySelector('.hero .eyebrow');
+  if(eye){eye.dataset.en='Jeddah • Serving Saudi Arabia';eye.dataset.ar='جدة • نخدم جميع مناطق المملكة';eye.textContent=ar?eye.dataset.ar:eye.dataset.en}
+  if(h){h.dataset.en='EQUIPMENT, TRUCKS & <span>LOGISTICS SUPPORT.</span>';h.dataset.ar='معدات وشاحنات<br>ودعم لوجستي<br><span>من الطلب إلى التنفيذ.</span>';h.innerHTML=ar?h.dataset.ar:h.dataset.en}
+  if(heroP){heroP.dataset.en='SAC Logistics connects contractors, factories, warehouses and infrastructure projects with the right equipment, trucks, transport and operating support—coordinated through one accountable partner.';heroP.dataset.ar='تربط SAC Logistics المقاولين والمصانع والمستودعات ومشاريع البنية التحتية بالمعدات والشاحنات والنقل والدعم التشغيلي المناسب، من خلال جهة واحدة تدير التنسيق والمتابعة.';heroP.textContent=ar?heroP.dataset.ar:heroP.dataset.en}
+  const heroBtns=d.querySelectorAll('.hero .btn');
+  if(heroBtns[0]){heroBtns[0].dataset.en='Request equipment or truck →';heroBtns[0].dataset.ar='اطلب معدة أو شاحنة ←';heroBtns[0].textContent=ar?heroBtns[0].dataset.ar:heroBtns[0].dataset.en}
+  if(heroBtns[1]){heroBtns[1].dataset.en='Explore solutions';heroBtns[1].dataset.ar='استعرض الحلول';heroBtns[1].textContent=ar?heroBtns[1].dataset.ar:heroBtns[1].dataset.en}
+  const stats=d.querySelectorAll('.stat');
+  const statsEn=[['24/7','Support & follow-up'],['KSA','Kingdom-wide network'],['ONE','Accountable partner'],['FLEX','Flexible solutions']];
+  const statsAr=[['24/7','دعم ومتابعة'],['KSA','شبكة داخل المملكة'],['ONE','جهة تنسيق واحدة'],['FLEX','حلول مرنة']];
+  stats.forEach((stat,index)=>{const strong=stat.querySelector('strong'),label=stat.querySelector('span'),en=statsEn[index],arabic=statsAr[index];if(!en||!arabic)return;strong.textContent=en[0];label.dataset.en=en[1];label.dataset.ar=arabic[1];label.textContent=ar?arabic[1]:en[1]});
   const card=d.querySelector('.c6');
   if(card){
     const t=card.querySelector('h3'),p=card.querySelector('p');
@@ -72,8 +88,12 @@ function X(){
     if(t){t.dataset.en='Low Bed & High Bed Transport';t.dataset.ar='نقل لو بد وهاي بد';t.textContent=ar?t.dataset.ar:t.dataset.en;}
     if(p){p.dataset.en='Low bed and high bed trucks for machinery, oversized loads and project logistics.';p.dataset.ar='شاحنات لو بد وهاي بد لنقل الآليات والأحمال الكبيرة وخدمات المشاريع.';p.textContent=ar?p.dataset.ar:p.dataset.en;}
   }
-  const option=d.querySelector('#type option:nth-child(4)');
-  if(option){option.dataset.en='Low Bed / High Bed Trucks';option.dataset.ar='شاحنات لو بد / هاي بد';option.textContent=ar?option.dataset.ar:option.dataset.en;}
+  const select=d.getElementById('type');
+  if(select&&select.dataset.optionsLang!==(ar?'ar':'en')){
+    const options=ar?['تأجير معدات ثقيلة','كرينات ومعدات رفع','شاحنات ونقل بري','نقل لو بد / هاي بد','مولدات ومعدات صناعية','معدات مستودعات ورافعات شوكية','صيانة وقطع غيار','طلب آخر']:['Heavy equipment rental','Cranes & lifting equipment','Trucks & road transport','Low bed / high bed transport','Generators & industrial equipment','Warehouse equipment & forklifts','Maintenance & spare parts','Other requirement'];
+    select.innerHTML=options.map((text,index)=>`<option data-en="${['Heavy equipment rental','Cranes & lifting equipment','Trucks & road transport','Low bed / high bed transport','Generators & industrial equipment','Warehouse equipment & forklifts','Maintenance & spare parts','Other requirement'][index]}" data-ar="${['تأجير معدات ثقيلة','كرينات ومعدات رفع','شاحنات ونقل بري','نقل لو بد / هاي بد','مولدات ومعدات صناعية','معدات مستودعات ورافعات شوكية','صيانة وقطع غيار','طلب آخر'][index]}">${text}</option>`).join('');
+    select.dataset.optionsLang=ar?'ar':'en';
+  }
   const b=d.getElementById('lang');
   if(b&&!b.dataset.bound){
     b.dataset.bound='1';

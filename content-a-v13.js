@@ -9,7 +9,7 @@ async function CA() {
     l = d.createElement('link');
     l.id = 'contentCSS';
     l.rel = 'stylesheet';
-    l.href = 'content-v13.css?v=18';
+    l.href = 'content-v13.css?v=20';
     d.head.appendChild(l);
   }
 
@@ -26,7 +26,7 @@ async function CA() {
   const about = d.createElement('section');
   about.id = 'sacAbout';
   about.className = 'sac dark';
-  about.innerHTML = `<div class="wrap media-copy"><div><span class="tag">${T('عن SAC Logistics', 'About SAC Logistics')}</span><h2>${T('نوفّر المعدة والشاحنة المناسبة، وندير التنفيذ حتى اكتمال الخدمة.', 'We source the right equipment or truck and manage execution through completion.')}</h2><p class="lead">${T('شركة سعودية تخدم مشاريع المقاولات والمصانع والبنية التحتية عبر شبكة من ملاك المعدات وشركات النقل ومقدمي الخدمات. نراجع الاحتياج، نختار الحل الأنسب، وننسق الوصول والتشغيل والتسليم من خلال جهة واحدة.', 'A Saudi logistics company serving contractors, factories and infrastructure projects through a network of equipment owners, transport companies and specialist providers. We assess the need, select the right solution and coordinate arrival, operation and delivery through one accountable partner.')}</p></div><div class="equipment-stage">${image ? `<img class="approved-equipment" src="${image}" alt="SAC Logistics equipment fleet">` : ''}<span class="equipment-label">${T('شبكة معدات جاهزة للمشروع', 'Project-ready equipment network')}</span></div></div>`;
+  about.innerHTML = `<div class="wrap"><div class="media-copy"><div><span class="tag">${T('عن SAC Logistics', 'About SAC Logistics')}</span><h2>${T('جهة واحدة توفّر المعدة أو الشاحنة وتدير التنفيذ حتى الإغلاق.', 'One accountable partner for equipment, transport and execution.')}</h2><p class="lead">${T('SAC Logistics شركة سعودية مقرها جدة، تخدم مشاريع المقاولات والمصانع والبنية التحتية والمستودعات عبر شبكة من ملاك المعدات وشركات النقل والورش ومقدمي الخدمات. ندرس الاحتياج، نقارن الحلول، ننسّق الجدولة والوصول، ونتابع التشغيل أو التسليم حتى اكتمال الخدمة.', 'SAC Logistics is a Jeddah-based Saudi company supporting contractors, factories, infrastructure projects and warehouses through a network of equipment owners, transport companies, workshops and specialist providers. We study the requirement, compare solutions, coordinate mobilisation and follow operation or delivery through completion.')}</p></div><div class="equipment-stage">${image ? `<img class="approved-equipment" src="${image}" alt="SAC Logistics equipment and transport network">` : ''}<span class="equipment-label">${T('شبكة تشغيل تغطي احتياجات المشروع', 'A project-ready operating network')}</span></div></div><div class="value-ribbon"><div><strong>${T('جهة واحدة', 'One partner')}</strong><span>${T('للطلب والتنسيق والمتابعة', 'Request, coordination and follow-up')}</span></div><div><strong>${T('خيارات متعددة', 'Multiple options')}</strong><span>${T('مقارنة فنية وتجارية قبل الاعتماد', 'Technical and commercial comparison')}</span></div><div><strong>${T('انتشار داخل المملكة', 'Kingdom-wide reach')}</strong><span>${T('شبكة موردين وملاك معدات ونقل', 'Equipment, transport and supplier network')}</span></div><div><strong>${T('دعم مستمر', 'Continuous support')}</strong><span>${T('من تأكيد الطلب حتى إغلاق الخدمة', 'From confirmation through close-out')}</span></div></div></div>`;
   d.querySelector('.hero').after(about);
 
   const equipment = [
@@ -81,25 +81,29 @@ async function CA() {
   about.after(eq);
 
   const services = ar ? [
-    ['تأجير المعدات الثقيلة', 'معدات للمشاريع حسب النوع والسعة والمدة والموقع.'],
-    ['الشاحنات والنقل البري', 'شاحنات وتريلات لنقل المواد والبضائع والحاويات.'],
-    ['لو بد وهاي بد', 'نقل الآليات والأحمال الكبيرة بين المواقع.'],
-    ['حلول المشاريع والمصانع', 'دعم تشغيلي مجدول أو عند الطلب.'],
-    ['الصيانة والطوارئ', 'تنسيق الصيانة المتنقلة والورش وقطع الغيار.'],
-    ['المتابعة والتسليم', 'متابعة الطلب حتى اكتمال التشغيل أو التسليم.']
+    ['تأجير المعدات الثقيلة', 'توفير معدات المشاريع والمقاولات حسب نوع العمل والسعة ومدة التشغيل وموقع المشروع.'],
+    ['الشاحنات والنقل البري', 'شاحنات وتريلات لنقل مواد البناء والبضائع والحاويات بين المدن والمواقع.'],
+    ['نقل لو بد وهاي بد', 'نقل الآليات والمعدات والأحمال الكبيرة مع تنسيق التحميل والمسار والوصول.'],
+    ['حلول المشاريع والمصانع', 'دعم تشغيلي دوري أو عند الطلب للمشاريع والمصانع والمستودعات.'],
+    ['نقل المواد والشحنات', 'تنسيق الاستلام والتحميل والنقل والتسليم مع متابعة حالة الطلب.'],
+    ['الصيانة والطوارئ', 'ربط المعدات والشاحنات بالورش المتنقلة والثابتة وخدمات الأعطال العاجلة.'],
+    ['قطع الغيار والملحقات', 'تنسيق قطع الغيار والبطاريات والشواحن والشوك والملحقات المتخصصة.'],
+    ['المقارنة والمتابعة', 'مقارنة السعر والتوفر والقدرة التشغيلية، ثم متابعة التنفيذ حتى الإغلاق.']
   ] : [
-    ['Heavy Equipment Rental', 'Project equipment matched to type, capacity, duration and site.'],
-    ['Trucks & Road Transport', 'Trucks and trailers for materials, cargo and containers.'],
-    ['Low Bed & High Bed', 'Heavy machinery and oversized-load transport.'],
-    ['Project & Factory Support', 'Scheduled or on-demand operational support.'],
-    ['Maintenance & Emergency', 'Mobile maintenance, workshop and parts coordination.'],
-    ['Follow-up & Delivery', 'Order monitoring through operation or final delivery.']
+    ['Heavy Equipment Rental', 'Project and construction equipment matched to the work type, capacity, operating period and location.'],
+    ['Trucks & Road Transport', 'Trucks and trailers for building materials, cargo and containers between cities and project sites.'],
+    ['Low Bed & High Bed Transport', 'Machinery and oversized-load transport with loading, route and arrival coordination.'],
+    ['Project & Factory Solutions', 'Scheduled or on-demand operating support for projects, factories and warehouses.'],
+    ['Materials & Shipment Transport', 'Pickup, loading, transport and delivery coordination with order-status follow-up.'],
+    ['Maintenance & Emergency', 'Access to mobile and fixed workshops for planned service and urgent breakdown support.'],
+    ['Parts & Attachments', 'Coordination of parts, batteries, chargers, forks and specialist attachments.'],
+    ['Comparison & Follow-up', 'Price, availability and capability compared before execution is monitored through close-out.']
   ];
 
   const serviceSection = d.createElement('section');
   serviceSection.id = 'sacServices';
   serviceSection.className = 'sac panel';
-  serviceSection.innerHTML = `<div class="wrap"><span class="tag">${T('خدماتنا', 'Our Services')}</span><h2>${T('خدمات تشغيل ونقل مترابطة، دون تعدد الجهات.', 'Connected equipment and transport services without multiple vendors.')}</h2><div class="service-grid-clean">${services.map((x, i) => `<article class="service-card-clean"><b>${String(i + 1).padStart(2, '0')}</b><h3>${x[0]}</h3><p>${x[1]}</p></article>`).join('')}</div></div>`;
+  serviceSection.innerHTML = `<div class="wrap"><div class="section-intro"><span class="tag">${T('خدماتنا', 'Our Services')}</span><h2>${T('معدات ونقل ودعم تشغيلي ضمن مسار واحد واضح.', 'Equipment, transport and operating support through one clear workflow.')}</h2><p>${T('بدلاً من التنسيق مع عدة جهات، تتولى SAC Logistics مطابقة الاحتياج واختيار مقدم الخدمة والجدولة والمتابعة حتى اكتمال الطلب.', 'Instead of coordinating multiple vendors, SAC Logistics matches the requirement, selects the provider, schedules execution and follows the order through completion.')}</p></div><div class="service-grid-clean">${services.map((x, i) => `<article class="service-card-clean"><b>${String(i + 1).padStart(2, '0')}</b><h3>${x[0]}</h3><p>${x[1]}</p><span class="card-arrow">↗</span></article>`).join('')}</div></div>`;
   eq.after(serviceSection);
 }
 
