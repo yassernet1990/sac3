@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="250 100 1020 840" role="img" aria-labelledby="title desc">
+  <title id="title">SAC Logistics Industrial Lime mark</title>
+  <desc id="desc">Angular SAC logistics symbol using lime, cyan and blue gradients.</desc>
+  <defs>
+    <linearGradient id="topGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#C5DF31"/>
+      <stop offset="0.58" stop-color="#13C4E2"/>
+      <stop offset="1" stop-color="#00BFE8"/>
+    </linearGradient>
+    <linearGradient id="lowerGradient" x1="0.25" y1="1" x2="0.85" y2="0">
+      <stop offset="0" stop-color="#0069B5"/>
+      <stop offset="0.55" stop-color="#009DD5"/>
+      <stop offset="1" stop-color="#13C4E2"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#topGradient)" d="M565 122h700l-183 158H626l-78 85 288 63-181 164-344-199 254-271z"/>
+  <path fill="url(#lowerGradient)" d="M980 423l218 43-519 458-105-114 406-387z"/>
+</svg>
