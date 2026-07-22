@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.theme-industriallime[lang='en'] body,
+.theme-industriallime[lang='en'] button,
+.theme-industriallime[lang='en'] input,
+.theme-industriallime[lang='en'] select,
+.theme-industriallime[lang='en'] textarea {
+  font-family:'Manrope','Helvetica Neue',Arial,sans-serif!important;
+}
+
+.theme-industriallime .sac-logo-mark {
+  width:58px;
+  height:48px;
+  --logo-scroll-turn:0deg;
+  --logo-scroll-lift:0px;
+}
+.theme-industriallime .sac-industrial-logo {
+  filter:drop-shadow(0 5px 12px rgba(0,157,213,.2));
+}
+.theme-industriallime .sac-logo-group {
+  transform:translateY(var(--logo-scroll-lift)) rotateZ(var(--logo-scroll-turn)) rotateX(var(--logo-rx)) rotateY(var(--logo-ry));
+}
+.theme-industriallime .sac-brand:hover .sac-logo-group,
+.theme-industriallime .sac-logo-group:focus-visible {
+  transform:translateY(calc(var(--logo-scroll-lift) - 4px)) rotateZ(calc(var(--logo-scroll-turn) - 2deg)) rotateX(var(--logo-rx)) rotateY(var(--logo-ry)) scale(1.11);
+}
+.theme-industriallime nav {
+  transition:background .32s ease,box-shadow .32s ease,border-color .32s ease!important;
+}
+.theme-industriallime nav.sac-nav-scrolled {
+  background:rgba(3,14,23,.97)!important;
+  border-color:rgba(19,196,226,.2)!important;
+  box-shadow:0 12px 34px rgba(0,0,0,.25)!important;
+}
+
+.theme-industriallime .form input,
+.theme-industriallime .form select,
+.theme-industriallime .form textarea {
+  color-scheme:light;
+  background:#EDF3F5!important;
+  color:#0D2435!important;
+  border:1px solid #B9CBD3!important;
+  caret-color:#0069B5;
+  font-weight:600;
+}
+.theme-industriallime .form input::placeholder,
+.theme-industriallime .form textarea::placeholder {
+  color:#5C7380!important;
+  opacity:1;
+}
+.theme-industriallime .form select option {
+  background:#FFFFFF!important;
+  color:#0D2435!important;
+}
+.theme-industriallime .form input:hover,
+.theme-industriallime .form select:hover,
+.theme-industriallime .form textarea:hover {
+  border-color:#7CA1B1!important;
+}
+.theme-industriallime .form input:focus,
+.theme-industriallime .form select:focus,
+.theme-industriallime .form textarea:focus {
+  background:#FFFFFF!important;
+  border-color:transparent!important;
+  box-shadow:0 0 0 4px rgba(19,196,226,.14);
+}
+
+@media(max-width:560px){
+  .theme-industriallime .sac-logo-mark{width:50px;height:42px}
+}
+@media(prefers-reduced-motion:reduce){
+  .theme-industriallime .sac-logo-group{transform:none!important}
+}
